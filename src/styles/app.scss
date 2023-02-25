@@ -1,0 +1,106 @@
+@mixin coledBorder ($w: 1px, $c: red) {
+    border: $w solid $c;
+}
+
+.App {
+    padding: 1rem;
+}
+
+.container {
+    & .app-bg{
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-name: heartBeatingBg;
+    }
+}
+
+@keyframes heartBeatingBg {
+    from {
+        transform: scale(1);
+        filter: saturate(1.5);
+    }
+    
+    to {
+        transform: scale(0.99);
+    }
+}
+
+
+@keyframes heartBeating {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0.8);
+    }
+}
+
+
+.form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    padding: 1.5rem;
+    width: 300px;
+    margin: 30vh auto;
+    height: auto;
+    grid-area: b;
+    background: rgba(245, 39, 41, 0.1);
+
+    & .inp-number-gender {
+        width: 100%;
+
+        & select:active {
+            transform: scaleY(0.8);
+        }
+    }
+
+    & .inp-number-age {
+        width: 60px;
+        text-align: center;
+    }
+
+    & .btn-calcFCM {
+        width: 80px;
+
+        &:active {
+            transform: skew(30deg);
+        }
+
+        & .heartBeat-icon {
+
+
+            &:hover {
+                animation-duration: 0.3s;
+                animation-iteration-count: infinite;
+                animation-name: heartBeating;
+            }
+        }
+    }
+}
+
+@media (max-width: 1131px) {
+
+    .App {
+        & .title {
+            color: rgba(138, 2, 6, 0.8);
+            // color: blue;
+            background: rgba(248, 237, 238, 0.50);
+        }
+
+    }
+
+    .form {
+        background: rgba(240, 221, 221, 0.58);
+    }
+}
+
+
+
+.FCM-result {
+    color: blue;
+    height: 60px;
+    grid-area: c;
+
+}
