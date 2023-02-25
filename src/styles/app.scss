@@ -25,7 +25,6 @@
     }
 }
 
-
 @keyframes heartBeating {
     from {
         transform: scale(1);
@@ -35,7 +34,6 @@
         transform: scale(0.8);
     }
 }
-
 
 .form {
     display: flex;
@@ -96,11 +94,16 @@
     }
 }
 
-
-
 .FCM-result {
     color: blue;
     height: 60px;
     grid-area: c;
 
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    margin: 1rem;
+    left: 45vw;
 }
