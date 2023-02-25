@@ -14,11 +14,13 @@ import React, { useState } from "react";
 
 import { FaHeartbeat } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
+import appBgIcon from "./assets/Realistic-Red-Heart.svg";
 
 function App() {
   const refInpGender = React.useRef<HTMLSelectElement | null>(null);
   const refInpAge = React.useRef<HTMLInputElement | null>(null);
   const [FCM, setFCM] = useState(0);
+
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
@@ -38,7 +40,7 @@ function App() {
   return (
     <div className="App" style={{ width: "100vw", height: "100vh" }}>
       <Container className="container" zIndex={-1} position="absolute">
-        <Image className="app-bg" src="/src/assets/Realistic-Red-Heart.svg" />{" "}
+        <Image className="app-bg" src={appBgIcon} />
       </Container>
       <Heading className="title" textAlign="center" color="tomato">
         Frequência cardíaca Máxima (FCM)
