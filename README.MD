@@ -7,6 +7,12 @@ levando em consideração a idade e sexo do usuário.
 
 **Objetivo:** a minha finalidade com este projeto foi aprender a utilizar e experimentar a lib [Chakra UI](https://chakra-ui.com/). 
 
+## deploy
+<a hre="https://monitor-bpm.vercel.app/"><img src="https://user-images.githubusercontent.com/76600539/221428461-f489f522-b3e9-4086-af8e-932faa43cf09.png" alt="external link" width="60px" title="Clique aqui para acessar o deploy da aplicação" /></a>
+
+
+
+
 
 ## Tecnologias
 <ul>
