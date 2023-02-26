@@ -6,25 +6,6 @@
     padding: 1rem;
 }
 
-.container {
-    & .app-bg{
-        animation-duration: 1s;
-        animation-iteration-count: infinite;
-        animation-name: heartBeatingBg;
-    }
-}
-
-@keyframes heartBeatingBg {
-    from {
-        transform: scale(1);
-        filter: saturate(1.5);
-    }
-    
-    to {
-        transform: scale(0.99);
-    }
-}
-
 @keyframes heartBeating {
     from {
         transform: scale(1);

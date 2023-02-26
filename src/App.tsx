@@ -9,8 +9,9 @@ import {
   Container,
   Image,
   Link,
+  keyframes
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { FaHeartbeat } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
@@ -20,6 +21,7 @@ function App() {
   const refInpGender = React.useRef<HTMLSelectElement | null>(null);
   const refInpAge = React.useRef<HTMLInputElement | null>(null);
   const [FCM, setFCM] = useState(0);
+  const [heartBeating, setHeartBeating] = useState(1);
 
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
@@ -35,12 +37,30 @@ function App() {
     setTimeout(() => {
       setFCM(0);
     }, displayTime);
+    
   };
 
+
+  useEffect(() => {
+
+FCM > 0 && setHeartBeating(60/FCM);
+    setTimeout(()=>setHeartBeating(1),2000)
+  }, [FCM])
+  
+
+  const animationKeyframes = keyframes`
+  0% { transform: scale(1)}
+  10% { transform: scale(0.98)}
+  50% { transform: scale(0.95)}
+  100% { transform: scale(0.90)}
+`;
+
+const animation = `${animationKeyframes} ${heartBeating}s ease-in-out infinite`;
+  
   return (
     <div className="App" style={{ width: "100vw", height: "100vh" }}>
-      <Container className="container" zIndex={-1} position="absolute">
-        <Image className="app-bg" src={appBgIcon} />
+      <Container className="container" zIndex={-1}  position="absolute">
+        <Image className="app-bg" id="appBg"  src={appBgIcon} animation={animation}/>
       </Container>
       <Heading className="title" textAlign="center" color="tomato">
         Frequência cardíaca Máxima (FCM)
