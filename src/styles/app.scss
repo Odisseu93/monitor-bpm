@@ -95,6 +95,16 @@
     }
 }
 
+
+@media (max-width: 768px) {
+    .form {
+        background: red;
+        & .heartBeat-icon:hover {
+           animation-play-state: paused;
+        }
+    }
+}
+
 .FCM-result {
     color: blue;
     height: 60px;
